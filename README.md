@@ -8,7 +8,7 @@ This repo demonstrates how to structure your code in accordance with MVC.
 4. Run ``node index.js`` to start the server
 
 ## Endpoints
-This application has 4 endpoints.
+This application has 3 endpoints.
 - GET /books : returns a list of books in the database
 - POST /books: add a book
 - GET /books/id: retrieve a book by ID
