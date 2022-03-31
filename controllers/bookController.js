@@ -4,11 +4,12 @@ const data = require('../data/books')
 
 // Display list of all books
 exports.list_books = async (req, res) => {
+    console.log('listing')
     const books = await bookModel.find({});
     try {
         res.send(books);
       } catch (error) {
-        response.status(500).send(error);
+        res.status(500).send(error);
       }
 };
 
@@ -29,12 +30,18 @@ exports.create_book = async (req, res) => {
       await book.save();
       res.send(book);
     } catch(error) {
-      response.status(500).send(error);
+      res.status(500).send(error);
     }
 };
 
 // retrieve a book by ID
-exports.retrieve_book = function(req, res){
-    let bookId = req.params.bookId
-    res.json(_.find(data.books, { id: bookId }))
-}
+exports.retrieve_book = async (req, res) => {
+  try {
+      const bookId = req.params.bookId
+      console.log(bookId)
+      const book = await bookModel.find({ _id: bookId });  
+      res.send(book);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
