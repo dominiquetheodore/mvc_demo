@@ -1,5 +1,5 @@
 # MVC demo
-This NodeJS demonstrates how to structure your code in accordance with MVC.
+This repo demonstrates how to structure your code in accordance with MVC.
 
 ## Installation
 1. Clone this repo to your local machine
