@@ -12,7 +12,8 @@ exports.list_books = async (req, res) => {
       }
 };
 
-// create a books
+// create a books: demonstrates destructuring
+/*
 exports.create_book = function(req, res) {
     const { title, author } = req.body
     res.json({
@@ -20,7 +21,7 @@ exports.create_book = function(req, res) {
         author
     });
 };
-
+*/
 exports.create_book = async (req, res) => {
     const book = new bookModel(req.body);
   
@@ -34,6 +35,6 @@ exports.create_book = async (req, res) => {
 
 // retrieve a book by ID
 exports.retrieve_book = function(req, res){
-    let bookId = parseInt(req.params.bookId)
+    let bookId = req.params.bookId
     res.json(_.find(data.books, { id: bookId }))
 }
